@@ -22,7 +22,7 @@ const AuthButton: React.FC<{ email?: string; loading?: boolean }> = ({ email, lo
   const logOutHandler = async() => {
     setError('');
     try {
-      sessionStorage.removeItem('user');
+      typeof window !== 'undefined' && sessionStorage.removeItem('user');
       magic && magic.user.logout()
       const cookieRes = await fetch('/api/logout');
       const cookieRemoved = await cookieRes.json()

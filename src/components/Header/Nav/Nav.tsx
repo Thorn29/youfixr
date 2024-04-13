@@ -9,7 +9,7 @@ const Nav: React.FC = () => {
   const [userIsLoading, setUserIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
-    const email = sessionStorage.getItem('user');
+    const email =  typeof window !== 'undefined' && sessionStorage.getItem('user');
     if (email) {
       setUserEmail(email)
     }

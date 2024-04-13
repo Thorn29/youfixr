@@ -9,7 +9,7 @@ const Video: React.FC = () => {
   const [saved, setSaved] = useState<boolean>(() => active?.favorited ? true : false);
   const [error, setError] = useState<string>('');
   const router = useRouter()
-  const userLoggedIn = sessionStorage.getItem('user');
+  const userLoggedIn = typeof window !== 'undefined' && sessionStorage.getItem('user');
 
 
   useEffect(() => {

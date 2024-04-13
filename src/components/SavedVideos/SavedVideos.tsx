@@ -30,7 +30,7 @@ const SavedVideos: React.FC = () => {
   }, [])
 
   if (loading) return <h4 className={`${styles.message} ${styles.loading} font2`}>Loading...</h4>
-  if (list.length === 0) return <h4 className={`${styles.message} font2`}>You haven't saved any videos yet</h4>
+  if (list.length === 0) return <h4 className={`${styles.message} font2`}>{`You haven't saved any videos yet`}</h4>
   return (
     <>
       <div className={styles.savedVideos}>

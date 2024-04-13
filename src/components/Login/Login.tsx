@@ -45,7 +45,7 @@ const Login: React.FC = () => {
           })
           const userData = await response.json()
           if (userData) {
-            sessionStorage.setItem('user', userData.data)
+            typeof window !== 'undefined' && sessionStorage.setItem('user', userData.data)
             router.push('/home')
           } else {
             setLoading(false)
