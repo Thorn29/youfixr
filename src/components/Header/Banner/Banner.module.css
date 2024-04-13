@@ -1,0 +1,168 @@
+.banner {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(rgba(0,0,0,0), var(--bgcolor));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.bannerTile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+}
+
+.imgWrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  box-shadow: 5px 5px 15px var(--shade2);
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.subtitle {
+  font-size: .8rem;
+  font-weight: 200;
+  color: var(--text);
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.author {
+  color: var(--primary);
+  font-size: .7rem;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.desc {
+  font-size: .8rem;
+  color: var(--text);
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 40vw;
+  height: 30px;
+  border: none;
+  margin: 0 2px;
+  background: radial-gradient(ellipse at top, var(--pshade1), var(--primary), var(--pshade3));
+  border-radius: 3px;
+  font-size: .7rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.button:first-of-type {
+  background: var(--darkbtn);
+  color: var(--text);
+}
+
+@media (min-width: 768px) {
+
+  .banner {
+    flex-grow: 0;
+    height: 60vw;
+    min-height: min-content;
+  }
+
+  .item {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .imgWrapper {
+    max-width: 45%;
+  }
+
+  .info {
+    max-width: 45%;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .banner {
+    height: 40vw;
+  }
+
+  .item {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgWrapper {
+    max-width: 400px;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+
+  .info {
+    max-width: 400px;
+  }
+
+  .button {
+    cursor: pointer;
+    transition: .4s;
+  }
+
+  .button:hover {
+    filter: brightness(140%);
+  }
+
+}
+
+@media (min-width: 1300px) {
+
+.banner {
+  height: 25vw;
+}
+
+}

@@ -1,0 +1,22 @@
+.grid {
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+@media (min-width: 768px) {
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    max-width: 65vw;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

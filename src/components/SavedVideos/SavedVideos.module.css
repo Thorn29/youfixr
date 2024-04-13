@@ -1,0 +1,28 @@
+.message {
+  font-size: 1.4rem;
+  text-align: center;
+  color: var(--glow1);
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.loading {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+
+  .savedVideos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  .savedVideos {
+    max-width: 65vw;
+    margin: 0 auto;
+  }
+}

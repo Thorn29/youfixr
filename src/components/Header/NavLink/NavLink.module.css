@@ -1,0 +1,35 @@
+.link {
+  list-style: none;
+}
+
+.link a {
+  display: block;
+  width: 33vw;
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--text);
+}
+
+.active a, .link:hover a {
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  
+  .link {
+    margin: 0 1rem;
+  }
+
+  .link a {
+    width: fit-content;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  
+  .link {
+    margin: 0 2rem;
+  }
+
+}

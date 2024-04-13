@@ -1,0 +1,19 @@
+@media (min-width: 768px) {
+
+  .categoryGrid {
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 400px));
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  
+  .categoryGrid {
+    width: fit-content;
+    grid-template-columns: repeat(3, minmax(200px, 400px));
+  }
+
+}

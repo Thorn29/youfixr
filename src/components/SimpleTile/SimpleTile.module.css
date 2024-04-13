@@ -1,0 +1,34 @@
+.simpleTile {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.imgWrapper {
+  position: relative;
+  aspect-ratio: 16 /9;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.title {
+  font-size: .8rem;
+  color: var(--primary);
+  color: var(--text);
+  margin-top: .5rem;
+  height: 80px;
+}
+
+@media (min-width: 768px) {
+
+.simpleTile {
+  width: 350px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.simpleTile:hover {
+  transform: scale(1.05);
+}
+
+}
