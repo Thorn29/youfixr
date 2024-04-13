@@ -2,11 +2,10 @@ import { getFavorites } from "../../../../lib/db/hasura"
 import { authenticateUser } from "../utils"
 
 export async function GET() {
-  try {
-    
-    const userData: { token: string, userId: string } | undefined = authenticateUser();
+  const userData: { token: string, userId: string } | undefined = authenticateUser();
     if (!userData) throw 'Not authorized';
-
+    
+  try {
     const videoList = await getFavorites(userData.token, userData.userId)
 
     if (videoList.length > 0) {

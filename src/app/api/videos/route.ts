@@ -2,9 +2,10 @@ import { findVideoByUser, getWatched, insertVideo, updateVideo } from "../../../
 import { authenticateUser } from "../utils"
 
 export async function GET() {
+  const userData: { token: string, userId: string } | undefined  = authenticateUser()
+  if (!userData) throw 'Not authorized';
+
   try {
-    const userData: { token: string, userId: string } | undefined  = authenticateUser()
-     if (!userData) throw 'Not authorized';
       const videoList = await getWatched(userData.token, userData.userId);
 
       if (videoList.length > 0) {

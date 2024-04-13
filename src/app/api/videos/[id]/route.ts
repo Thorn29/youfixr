@@ -3,11 +3,10 @@ import { authenticateUser } from "../../utils";
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
   const id = params.id
+  const userData = authenticateUser()
+  if (!userData) throw 'Not authorized';
 
   try {
-    const userData = authenticateUser()
-    if (!userData) throw 'Not authorized';
-
     const videos = await findVideoByUser(userData.token, userData.userId, id);
 
     if (videos) {
